@@ -66,7 +66,7 @@ export class App extends Component{
     }
   }
   componentDidUpdate(_, prevState) {
-    if (prevState.contacts !== this.state.contacts) {
+    if (this.state.contacts !== prevState.contacts) {
       const { contacts } = this.state;
       try {
         const itemToSet = JSON.stringify(contacts);
