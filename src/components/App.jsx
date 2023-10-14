@@ -15,15 +15,6 @@ export class App extends Component{
     this.setState({ filter: e.target.value });
   };
 
- getContact = contactsData => {
-    console.log('contactsData:', contactsData);
-    this.setState(() => {
-      return {
-        name: [contactsData, ...this.state.name],
-      }
-    });
-  };
-
   handleDelete = e => {
     this.setState(prevState => {
       return {
@@ -79,10 +70,10 @@ export class App extends Component{
 
   render() {
     const { filter } = this.setState 
-    const { getContact, onSubmit, handleFilterChange, handleDelete } = this;
+    const { onSubmit, handleFilterChange, handleDelete } = this;
     const visibleContacts = this.getFoundContacts();
     return (
-      <FormContainer getContact={getContact} >
+      <FormContainer>
         <h1>Phonebook</h1>
         <ContactForm onSubmit={onSubmit} />
 
